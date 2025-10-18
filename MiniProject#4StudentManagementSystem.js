@@ -90,8 +90,8 @@ Pushes newGrade into their grades array. */
             })
             .filter(student => student.avg >= 75);
 
-        studentsWithAvg.forEach(student => {
-            console.log(`${student.name} got an average of ${student.avg}`)
+        studentsWithAvg.forEach(({name, avg}) => {
+            console.log(`${name} got an average of ${avg}`)
         })
         
 
