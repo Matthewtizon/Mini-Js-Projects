@@ -41,3 +41,17 @@ console.log(avgScore)
 
 
 //this mini coding exercise is just right
+
+
+
+
+
+
+/* retake of Q3 Q4
+
+Q3 closure is keeping a variable or codes isolated like in function you cant use that variable if its in the fuction, but not outside, but if its outside i can be use in multiple function, another example is outer function cant get the varible in the inner function, but return inner function in the outer function it can be useed
+
+Q4 will use spread operatior it is used in arrays ... to combine 2 or more arrays or get multiple data in a function uisng ...numbers
+
+
+*/
