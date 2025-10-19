@@ -55,3 +55,30 @@ Q4 will use spread operatior it is used in arrays ... to combine 2 or more array
 
 
 */
+let arr = []
+let summed = 10;
+function getNumbers(...numbers){
+  arr = numbers;
+  const sum = numbers.reduce((sum, number) => sum + number, 0)
+  
+  function iteration(){
+    summed++
+    console.log(summed)
+  }
+
+  return {sum, iteration};
+}
+
+
+console.log(summed)
+console.log(getNumbers(1,2,3,4,5,6,7))
+
+const result = getNumbers(1,2,3,4,5,6,4,3,2,1,);
+console.log(result.sum);
+
+//result.iteration()
+console.log(arr)
+
+let newarr = [...arr, 1,2,3,4,5,6,3]
+
+console.log(newarr)
