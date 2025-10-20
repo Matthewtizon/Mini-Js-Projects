@@ -37,7 +37,7 @@ Logs both the uppercase names and the total count
 */
 
 
-const students = [
+/*const students = [
   { name: "Luna", score: 80 },
   { name: "Theo", score: 60 },
   { name: "Maya", score: 95 }
@@ -53,7 +53,7 @@ function analyzeScores(students){
 }
 
 analyzeScores(students);
-
+*/
 // Output:
 // ["LUNA", "MAYA"]
 // Total Passed: 2
@@ -83,3 +83,34 @@ Which part felt smooth and natural?
 
 If you want to strengthen your understanding before tomorrow’s adaptive session, you can watch one short video or read one short article
 */
+
+
+
+// Write a function `sumArray(arr)` that returns the sum of all numbers in an array
+
+
+function sumArray(...arr){
+    const sum = arr.reduce((acc, number) => acc + number, 0)
+
+    return sum;
+}
+
+
+console.log(sumArray(1,2,3,4,5))
+
+
+//
+
+const students = [
+  { name: "Alice", score: 80 },
+  { name: "Bob", score: 60 },
+  { name: "Charlie", score: 90 }
+];
+
+
+students.forEach(() => {
+  const withAvg = students.filter(n => {
+    n.score >= 75})
+
+  console.log(withAvg)
+})
