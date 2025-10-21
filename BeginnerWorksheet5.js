@@ -97,15 +97,15 @@ const items = [
 
 const result = items.filter(i => i.price > 100).map(i => ({
     name : i.name,
-    discount : i.price - ((i.price * 10) * 0.10),
+    discount : i.price - ((i.price * 10) * 0.10)
 })).reduce((acc, i) => acc + i.discount, 0)
 
 
-result.forEach(i => {
-    console.log(`Total after tax: ${i.discount}`)
-})
 
-i cant answer this, this is all i can
+console.log(`Total after tax: ${result.discount}`)
+
+
+i cant answer this, this is all i can its undefined
 
 
 
@@ -150,7 +150,6 @@ const result = employees.map(e => {
 result.forEach(e => {
     console.log(`${e.name} earned a ${e.largeBonus ? 1000 : 500} bonus`)
 })
- 
 
 
 🌟 3️⃣ Highest Scorer (Nested Logic)
@@ -169,6 +168,23 @@ Use .reduce() to find the top student.
 
 Log: "Lia has the highest average: 90"
 
+
+const data = [
+  { name: "Kai", scores: [75, 85, 95] },
+  { name: "Lia", scores: [80, 90, 100] },
+  { name: "Noah", scores: [70, 60, 80] }
+];
+
+
+const result = data.map(d => ({
+  name: d.name,
+  avg: d.scores.reduce((acc, score) => acc + score, 0) / d.scores.length
+})).reduce((max, d) => d.avg > max.avg ? d : max)
+
+console.log(`${result.name} has the highest average: ${result.avg}`)
+
+
+
 🔒 4️⃣ Private Counter Manager (Closure Challenge)
 
 Write a closure that allows you to:
@@ -184,6 +200,29 @@ counter.reset();     // 0
 Must store count privately (not global)
 
 Must return an object with .increment() and .reset() functions.
+
+
+function createCounter(){
+  let count = 0;
+  function increment(){
+    count += 1;
+    return count;
+  }
+  function reset(){
+    count = 0;
+    return count;
+  }
+
+
+}
+
+const counter = createCounter();
+counter.increment(); // 1
+counter.increment(); // 2
+counter.reset();     // 0
+
+need more to learn and practice this
+
 
 🧠 5️⃣ Combine Everything — “Product Summary Generator”
 
@@ -209,14 +248,9 @@ Log a summary like:
 "3 products sold, total revenue after discount: 1590"
 
 
+cant answer this too becaue i cant fix the number 1 price calculator 
 
 
 
-
-
-
-
-
-
-
+you analyze my reflection
 */
