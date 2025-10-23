@@ -186,10 +186,25 @@ Return { increment, reset }.
 
 Check:
 
+function createCounter(){
+  let count = 0;
+  return {
+    increment: () => {
+      count++; 
+      return count
+    },
+
+    reset: () => {
+      count = 0;
+      return count;
+    }
+  }
+}
+
 const counter = createCounter();
-counter.increment(); // 1
-counter.increment(); // 2
-counter.reset();     // 0
+console.log(counter.increment()); // 1
+console.log(counter.increment()); // 2
+console.log(counter.reset());     // 0
 
 6) Product Summary Generator — combine everything (guided)
 
@@ -210,14 +225,23 @@ Build message: ${sold.length} products sold, total revenue after discount: ${Mat
 
 Debug tip: Log intermediate arrays (sold, discounted) to confirm types (arrays of objects vs arrays of numbers).
 
-🪞 Part 3 — Reflection & Self-check
 
-After you finish each exercise, write short answers:
+const products = [
+  {name: 'shampoo', price: 50, sold: 'yes'},
+  {name: 'sabon', price: 100, sold: 'yes'},
+  {name: 'champion', price: 150, sold: 'yes'},
+  {name: 'sabu', price: 20}
+]
 
-Which step did you struggle with and why?
+const sold = products.filter(p => p.sold);
+const discounted = sold.map(p => p.price * 0.95).reduce((acc, price) => acc + price, 0);
 
-For each .map() or .reduce() you used, what was the input type and output type at that step? (e.g., input: array of objects → .map() → output: array of numbers)
+console.log(`${sold.length} products sold, total revenue after discount: ${discounted}`);
 
-How would you explain the reduce used for finding the max to a beginner? (One or two sentences.)
+
+
+🪞 Part 3 — CHAT GPT Reflection & CHAT gpt check
+
+
 
 */
