@@ -191,7 +191,7 @@ Bonus = 1000 if total ≥ 100
 Bonus = 500 if total < 100
 
 Return the total bonus using .reduce()
-*/
+
 const sales = [
   { name: "John", total: 150 },
   { name: "Jane", total: 90 },
@@ -207,7 +207,7 @@ const resultBonus = sales.map(s => {
 resultBonus.forEach(rB => console.log(`${rB.name} got a bonus ${rB.withBonus ? 1000 : 500}`))
 
 
-/*
+
 
 7️⃣ Optional Mastery Exercise
 
@@ -218,6 +218,46 @@ Input: array of students or sales
 Output: array of messages + top performer + aggregated totals
 
 Must use: .map(), .filter(), .reduce(), and modular functions
+
+
+const employees = [
+  {name: "John", sales: 120, scores: [80,60,75]},
+  {name: "Mark", sales: 100, scores: [70,60,75]},
+  {name: "Malupa", sales: 120, scores: [80,60,75]},
+  {name: "eme", sales: 80, scores: [60,60,60]}
+]
+
+
+
+function analyzeAvg(score){
+  return score.reduce((acc, curr) => acc + curr, 0) / score.length;
+}
+
+function checkingBonus(sales){
+  employees.bonus = 0;
+    if (sales > 100){
+      employees.bonus = 0;
+      employees.bonus = 1000;
+    } else {
+      employees.bonus = 0;
+      employees.bonus = 500;
+    }
+  return employees.bonus 
+}
+
+const resultWithBonusAndAvg = employees.map(e => ({
+  name: e.name,
+  sales: e.sales,
+  bonus: e.bonus,
+  avg: analyzeAvg(e.scores),
+  withbonus: checkingBonus(e.sales)
+})).filter(e => e.sales >= 100 && e.avg > 69)
+
+resultWithBonusAndAvg.forEach(rBA => console.log(`${rBA.name} got a avg of ${rBA.avg.toFixed(1)} and bonus of ${rBA.withbonus} with ${rBA.sales}`))
+
+
+console.log(employees)
+
 
 ✅ Reflection: CHAT GPT Reflection & CHAT gpt check
 
